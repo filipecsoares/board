@@ -1,11 +1,11 @@
 # Requirements Checklist for the Card Board Manager
 
 ## 1. Fundamental Infrastructure Requirements
-- [ ] Configure the backend project with Spring Boot, including dependencies for Web, JPA, H2, Flyway, and testing
-- [ ] Configure the frontend project with Vue.js, including the standard structure for components, views, and routing
-- [ ] Configure the in-memory H2 database for development
-- [ ] Configure Flyway for versioning and execution of database migration scripts
-- [ ] Create Flyway migration scripts for the tables: boards, columns, cards, card_movements, card_blockings
+- [x] Configure the backend project with Spring Boot, including dependencies for Web, JPA, H2, Flyway, and testing
+- [x] Configure the frontend project with Vue.js, including the standard structure for components, views, and routing
+- [x] Configure the in-memory H2 database for development
+- [x] Configure Flyway for versioning and execution of database migration scripts
+- [x] Create Flyway migration scripts for the tables: boards, columns, cards, card_movements, card_blockings
 - [ ] Configure CORS in the backend to allow communication with the frontend
 
 ## 2. Domain and Architecture Requirements
