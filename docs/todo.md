@@ -6,10 +6,10 @@
 - [x] Configure the in-memory H2 database for development
 - [x] Configure Flyway for versioning and execution of database migration scripts
 - [x] Create Flyway migration scripts for the tables: boards, columns, cards, card_movements, card_blockings
-- [ ] Configure CORS in the backend to allow communication with the frontend
+- [x] Configure CORS in the backend to allow communication with the frontend
 
 ## 2. Domain and Architecture Requirements
-- [ ] Implement Clean Architecture with separation into layers: Entities, Use Cases, Adapters, Frameworks
+- [x] Implement Clean Architecture with separation into layers: Entities, Use Cases, Adapters, Frameworks
 - [ ] Create domain entities: Board, Column, Card, CardMovement, CardBlocking
 - [ ] Implement the ColumnType enum with values: INITIAL, PENDING, FINAL, CANCELED
 - [ ] Map JPA entities to the corresponding tables in the database
