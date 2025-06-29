@@ -56,7 +56,7 @@ The project follows **Clean Architecture** to ensure separation of concerns and 
 +--------+---------+
          ^
 +--------+---------+
-|   Entities       |  (Enterprise Business Rules)
+|     Domains      |  (Enterprise Business Rules)
 +------------------+
 ```
 
