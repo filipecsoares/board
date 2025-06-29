@@ -12,7 +12,7 @@
 - [x] Implement Clean Architecture with separation into layers: Entities, Use Cases, Adapters, Frameworks
 - [x] Create domain entities: Board, Column, Card, CardMovement, CardBlocking
 - [x] Implement the ColumnType enum with values: INITIAL, PENDING, FINAL, CANCELED
-- [ ] Map JPA entities to the corresponding tables in the database
+- [x] Map JPA entities to the corresponding tables in the database
 - [ ] Define interfaces (ports) for operations on Board, Column, and Card
 - [ ] Implement business services (BoardService, CardService) following business rules
 - [ ] Create DTOs for communication between layers

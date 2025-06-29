@@ -4,6 +4,7 @@ import com.fcs.board.domain.ColumnType;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "columns")
 public class ColumnEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
