@@ -13,9 +13,15 @@
 - [x] Create domain entities: Board, Column, Card, CardMovement, CardBlocking
 - [x] Implement the ColumnType enum with values: INITIAL, PENDING, FINAL, CANCELED
 - [x] Map JPA entities to the corresponding tables in the database
-- [ ] Define interfaces (ports) for operations on Board, Column, and Card
-- [ ] Implement business services (BoardService, CardService) following business rules
 - [ ] Create DTOs for communication between layers
+- [ ] Implement use cases for:
+    - [ ] Board creation, selection, and deletion
+    - [ ] Column creation with type/position/quantity rules
+    - [ ] Card creation, movement (with business rules), blocking/unblocking (with justification), and cancellation
+    - [ ] Sequential movement enforcement and exception for Canceled column
+    - [ ] Block movement of blocked cards
+    - [ ] Task completion time report (analyzing CardMovement)
+    - [ ] Card blocking history report (analyzing CardBlocking)
 
 ## 3. Functional Requirements - Backend
 ### 3.1. Board Management

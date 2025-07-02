@@ -1,5 +1,6 @@
 package com.fcs.board.adapter.jpa.entities;
 
+import com.fcs.board.domain.Board;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Set;
@@ -60,5 +61,13 @@ public class BoardEntity  {
 
     public void setColumns(Set<ColumnEntity> columns) {
         this.columns = columns;
+    }
+
+    public Board toDomain() {
+        return new Board(id, name, createdAt);
+    }
+
+    public static BoardEntity fromDomain(Board board) {
+        return new BoardEntity(board.getId(), board.getName(), board.getCreatedAt());
     }
 }
