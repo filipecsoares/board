@@ -14,7 +14,7 @@
 
 ## 📦 Domain Models (DDD)
 
-- [ ] `Board` (structure, creation logic)
+- [x] `Board` (structure, creation logic)
 - [ ] `Column` (type validation, limits)
 - [ ] `Card` (block, unblock, move logic)
 - [ ] `CardMovement` (track history)

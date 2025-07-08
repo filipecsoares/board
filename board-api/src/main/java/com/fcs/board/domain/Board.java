@@ -1,6 +1,7 @@
 package com.fcs.board.domain;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
@@ -15,12 +16,14 @@ public class Board {
         }
         this.name = name;
         this.createdAt = LocalDateTime.now();
+        this.columns = new ArrayList<>();
     }
 
     public Board(Long id, String name, LocalDateTime createdAt) {
         this.id = id;
         this.name = name;
         this.createdAt = createdAt;
+        this.columns = new ArrayList<>();
     }
 
     public Long getId() {
@@ -33,5 +36,14 @@ public class Board {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public List<Column> getColumns() {
+        return columns;
+    }
+
+    public void addColumn(Column column) {
+        if (column == null) throw new IllegalArgumentException("Column cannot be null");
+        this.columns.add(column);
     }
 }
