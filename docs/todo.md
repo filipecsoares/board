@@ -27,8 +27,8 @@
 
 ## 📚 Repositories
 
-- [ ] Define repository interfaces (ports)
-- [ ] Implement `JpaRepositoryAdapter` for each domain entity
+- [x] Define repository interfaces (ports)
+- [x] Implement `JpaRepositoryAdapter` for each domain entity
 
 ## ⚙️ Use Cases
 
