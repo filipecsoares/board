@@ -17,13 +17,13 @@
 - [x] `Board` (structure, creation logic)
 - [x] `Column` (type validation, limits)
 - [x] `Card` (block, unblock, move logic)
-- [ ] `CardMovement` (track history)
-- [ ] `CardBlocking` (block reasons and time)
+- [x] `CardMovement` (track history)
+- [x] `CardBlocking` (block reasons and time)
 
 ## 🧩 JPA Entities
 
-- [ ] Create `BoardEntity`, `ColumnEntity`, `CardEntity`, `CardMovementEntity`, `CardBlockingEntity`
-- [ ] Implement mapping classes between entities and domain models
+- [x] Create `BoardEntity`, `ColumnEntity`, `CardEntity`, `CardMovementEntity`, `CardBlockingEntity`
+- [x] Implement mapping classes between entities and domain models
 
 ## 📚 Repositories
 

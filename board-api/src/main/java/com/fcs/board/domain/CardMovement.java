@@ -8,5 +8,20 @@ public class CardMovement {
     private Long fromColumnId;
     private Long toColumnId;
     private LocalDateTime movedAt;
-    // getters and setters
+
+    public CardMovement(Long cardId, Long fromColumnId, Long toColumnId) {
+        if (cardId == null) throw new IllegalArgumentException("Card ID required");
+        if (fromColumnId == null) throw new IllegalArgumentException("From column required");
+        if (toColumnId == null) throw new IllegalArgumentException("To column required");
+        this.cardId = cardId;
+        this.fromColumnId = fromColumnId;
+        this.toColumnId = toColumnId;
+        this.movedAt = LocalDateTime.now();
+    }
+
+    public Long getId() { return id; }
+    public Long getCardId() { return cardId; }
+    public Long getFromColumnId() { return fromColumnId; }
+    public Long getToColumnId() { return toColumnId; }
+    public LocalDateTime getMovedAt() { return movedAt; }
 }
