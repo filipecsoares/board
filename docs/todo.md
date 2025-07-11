@@ -32,12 +32,11 @@
 
 ## ⚙️ Use Cases
 
-- [ ] `CreateBoardUseCase`
-- [ ] `CreateCardUseCase`
-- [ ] `MoveCardUseCase`
-- [ ] `BlockCardUseCase`
-- [ ] `UnblockCardUseCase`
-- [ ] `GenerateReportUseCase`
+- [x] `CreateBoardUseCase`
+- [x] `CreateCardUseCase`
+- [x] `MoveCardUseCase`
+- [x] `BlockCardUseCase`
+- [x] `UnblockCardUseCase`
 
 ## 🌐 REST Controllers
 
