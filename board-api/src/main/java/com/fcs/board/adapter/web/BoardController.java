@@ -1,8 +1,10 @@
 package com.fcs.board.adapter.web;
 
 import com.fcs.board.adapter.web.dto.BoardRequest;
+import com.fcs.board.adapter.web.dto.BoardResponse;
 import com.fcs.board.application.usecases.CreateBoardUseCase;
 import com.fcs.board.domain.Board;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,8 +18,8 @@ public class BoardController {
     }
 
     @PostMapping
-    public ResponseEntity<Board> createBoard(@RequestBody BoardRequest request) {
+    public ResponseEntity<BoardResponse> createBoard(@Valid @RequestBody BoardRequest request) {
         Board board = createBoardUseCase.execute(request.name());
-        return ResponseEntity.ok(board);
+        return ResponseEntity.ok(new BoardResponse(board.getId(), board.getName()));
     }
 }

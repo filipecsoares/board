@@ -1,4 +1,6 @@
 package com.fcs.board.adapter.web.dto;
 
-public record BoardRequest(String name) {
+import jakarta.validation.constraints.NotBlank;
+
+public record BoardRequest(@NotBlank String name) {
 }

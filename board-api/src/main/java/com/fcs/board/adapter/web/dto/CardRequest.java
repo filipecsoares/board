@@ -1,3 +1,6 @@
 package com.fcs.board.adapter.web.dto;
 
-public record CardRequest(Long columnId, String title, String description) {}
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+public record CardRequest(@NotNull Long columnId, @NotBlank String title, String description) {}

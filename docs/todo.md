@@ -45,7 +45,7 @@
 
 ## ✅ Validation & Error Handling
 
-- [ ] Define DTOs with `@NotBlank`, `@Valid`, etc.
+- [x] Define DTOs with `@NotBlank`, `@Valid`, etc.
 - [ ] Create global exception handler using `@ControllerAdvice`
 
 ## 📊 Reports
