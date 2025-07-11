@@ -40,9 +40,8 @@
 
 ## 🌐 REST Controllers
 
-- [ ] `BoardController`
-- [ ] `CardController`
-- [ ] `ReportController`
+- [x] `BoardController`
+- [x] `CardController`
 
 ## ✅ Validation & Error Handling
 
