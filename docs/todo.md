@@ -62,7 +62,7 @@
 ## 🎨 Frontend (Vue + Pure CSS)
 
 - [x] Create base layout and navigation
-- [ ] Implement `HomePage.vue` (create/select/delete boards)
+- [x] Implement `HomePage.vue` (create/select/delete boards)
 - [ ] Implement `BoardPage.vue` (display board, columns, cards)
 - [ ] Implement `CardDetails.vue` (block/unblock/cancel/report)
 - [ ] Style all views using custom CSS (`styles/main.css`)
