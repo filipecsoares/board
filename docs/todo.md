@@ -65,8 +65,8 @@
 - [x] Implement `HomePage.vue` (create/select/delete boards)
 - [x] Implement `BoardPage.vue` (display board, columns, cards)
 - [x] Implement `CardDetails.vue` (block/unblock/cancel/report)
-- [ ] Style all views using custom CSS (`styles/main.css`)
-- [ ] Connect Vue components to backend API using Axios
+- [x] Style all views using custom CSS (`styles/main.css`)
+- [x] Connect Vue components to backend API using Axios
 
 ## 🚀 Deployment
 
