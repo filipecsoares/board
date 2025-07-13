@@ -63,8 +63,8 @@
 
 - [x] Create base layout and navigation
 - [x] Implement `HomePage.vue` (create/select/delete boards)
-- [ ] Implement `BoardPage.vue` (display board, columns, cards)
-- [ ] Implement `CardDetails.vue` (block/unblock/cancel/report)
+- [x] Implement `BoardPage.vue` (display board, columns, cards)
+- [x] Implement `CardDetails.vue` (block/unblock/cancel/report)
 - [ ] Style all views using custom CSS (`styles/main.css`)
 - [ ] Connect Vue components to backend API using Axios
 
