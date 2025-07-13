@@ -70,6 +70,6 @@
 
 ## 🚀 Deployment
 
-- [ ] Prepare Dockerfile for backend and frontend
+- [x] Prepare Dockerfile for backend and frontend
 - [ ] Setup PostgreSQL instance for production
 - [ ] Configure profiles: dev and prod

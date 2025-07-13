@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: board-db
+    environment:
+      POSTGRES_DB: board
+      POSTGRES_USER: boarduser
+      POSTGRES_PASSWORD: boardpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./board-api
+    container_name: board-api
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/board
+      SPRING_DATASOURCE_USERNAME: boarduser
+      SPRING_DATASOURCE_PASSWORD: boardpass
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  frontend:
+    build: ./board-ui
+    container_name: board-ui
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:
