@@ -68,7 +68,7 @@ The project follows **Clean Architecture** to ensure separation of concerns and 
 ## Backend (Spring Boot)
 - **Language:** Java 21+
 - **Framework:** Spring Boot
-- **Persistence:** JPA/Hibernate, H2 (in-memory)
+- **Persistence:** JPA/Hibernate, H2 (in-memory, dev), PostgreSQL (prod)
 - **Migrations:** Flyway
 - **Structure:**
   - `domain`: Entities and enums (e.g., `Board`, `ColumnType`)
@@ -77,33 +77,34 @@ The project follows **Clean Architecture** to ensure separation of concerns and 
   - `config`: Application configuration (CORS, database)
 - **Key Classes:**
   - `Board`, `Column`, `Card`, `CardMovement`, `CardBlocking` (entities)
-  - `BoardService`, `CardService` (business logic)
   - `BoardController`, `CardController` (REST endpoints)
 - **Business Rules:**
   - Sequential card movement
   - Exception for direct move to Canceled
   - Blocked cards cannot be moved
   - Justification required for blocking/unblocking
+- **Profiles:**
+  - `dev`: H2 in-memory database
+  - `prod`: PostgreSQL (see Docker setup)
 
 ## Frontend (Vue.js)
-- **Language:** JavaScript (Vue 3)
+- **Language:** TypeScript (Vue 3 + Vite)
 - **Structure:**
   - `HomePage.vue`: Main menu (create/select/delete boards)
-  - `BoardList.vue`: List boards
   - `BoardPage.vue`: Board view with columns and cards
-  - `Column.vue`: Render columns and cards
   - `CardDetails.vue`: Card details and actions
-- **Styling:** Tailwind CSS
-- **API Integration:** Communicates with backend via REST
-- **Development Proxy:** Configurable via `vue.config.js` to avoid CORS issues
+- **Styling:** Pure CSS (`src/styles/main.css`), minimalist and responsive
+- **API Integration:** Communicates with backend via REST using Axios
 
 ## Database & Migrations
-- **Database:** H2 (in-memory, for development)
+- **Database:**
+  - H2 (in-memory, for development)
+  - PostgreSQL (for production, via Docker)
 - **Migrations:** Flyway scripts in `src/main/resources/db/migration`
 - **Entities:**
   - `BoardEntity`, `ColumnEntity`, `CardEntity`, `CardMovementEntity`, `CardBlockingEntity`
 - **Configuration:**
-  - Database and Flyway settings in `application.yml`
+  - Database and Flyway settings in `application.yml` and environment variables
 
 ## Reports
 - **Task Completion Time:** Calculates time spent by each card in columns and total time to completion
@@ -111,31 +112,46 @@ The project follows **Clean Architecture** to ensure separation of concerns and 
 
 ## Development Setup
 
+## Development & Deployment
+
 ### Prerequisites
 - Java 21+
 - Maven 3.6+
 - Node.js & npm (or Yarn)
+- Docker & Docker Compose
 
-### Backend (Spring Boot)
+### Local Development
+
+#### Backend (Spring Boot)
 ```bash
 # Clone the repository
-$ git clone <REPO_URL>
-$ cd board/board-api
-
-# Build and run
-$ mvn clean install
-$ mvn spring-boot:run
+git clone <REPO_URL>
+cd board/board-api
+mvn clean install
+mvn spring-boot:run
 # Backend runs at http://localhost:8080
 ```
 
-### Frontend (Vue.js)
+#### Frontend (Vue.js)
 ```bash
-# (Assuming frontend is in ../board-ui)
-$ cd ../board-ui
-$ npm install
-$ npm run serve
-# Frontend runs at http://localhost:8081
+cd ../board-ui
+npm install
+npm run dev
+# Frontend runs at http://localhost:5173
 ```
+
+### Docker Compose (Production-like Setup)
+
+To run the backend, frontend, and PostgreSQL database together:
+
+```bash
+docker-compose up --build
+# Backend: http://localhost:8080
+# Frontend: http://localhost
+# PostgreSQL: localhost:5432 (user: boarduser, pass: boardpass, db: board)
+```
+
+This will use the `prod` profile for the backend and connect to the PostgreSQL container.
 
 ## Testing
 - **Backend:**
